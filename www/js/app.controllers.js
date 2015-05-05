@@ -9,4 +9,14 @@ angular.module('app.controllers',[])
 	  error(function(data, status, headers, config) {
 	  });
 
+	$http.get('/rest/view/article/money').
+	  success(function(data, status, headers, config) {     
+	  	$scope.single = data;
+	  }).
+	  error(function(data, status, headers, config) {
+	  });
+})
+	
+.controller('AddCtrl', function($scope, $http){
+	
 });

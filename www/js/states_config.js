@@ -8,10 +8,10 @@ function useStatesConfig($stateProvider) {
       controller: 'HomeCtrl'
     })
 
-    .state('post', {
-      url: "/search",
-      templateUrl: "www/templates/home.html",
-      controller: 'PostCtrl'
+    .state('add', {
+      url: "/add",
+      templateUrl: "www/templates/add.html",
+      controller: 'AddCtrl'
     })
 
     .state('app.browse', {
