@@ -1,6 +1,6 @@
-#Angular-Node Basic
+#Full Application Demo
 
-Very basic app structure using angular on front end and node at the back end
+This demo Full Application uses Node.JS, AngularJS and Firebase
 
 Frontend
 Angular
@@ -10,10 +10,7 @@ Backend
 NodeJS
 ExpressJS
 
-The website gets an list of article from an api
-using Angular http get `/rest/article`, then NodeJS handles the back end point serving /rest/article which gets the API from external source.
 
 To run:
-    
     1. npm install
-    2. gulp
+    2. node app.js
