@@ -13,7 +13,6 @@
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>                            
-      <li class="active"><a href="/#/add">Add</a></li>                            
     </ul>            
   </div><!--/.nav-collapse -->
 </div><!--/.container-fluid -->
@@ -22,17 +21,10 @@
 <div class="container">
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Get Article</h1>
-        <p>Gets list of articles from an api</p>              
-        <span ng-hide="articles">Loading...</span>
-        <ol>
-          <li ng-repeat="a in articles track by $index">
-            <a href="/#/view/{{a.id}}"> {{a.title}}  </a> 
-          </li>
-        </ol>  
-        <p>Get specific article entitled money</p>
-        Title: {{single.title}}<br>
-        Url  : {{single.url}} <br>
-        Num  : {{single.num}}
+        <h1>Article</h1>
+        <p>{{article.title}}</p>              
+        <p>
+        	Url: {{article.url}}
+        </p>
       </div>      
  </div> <!-- /container -->

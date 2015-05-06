@@ -14,6 +14,12 @@ function useStatesConfig($stateProvider) {
       controller: 'AddCtrl'
     })
 
+    .state('view', {
+      url: "/view/:id",
+      templateUrl: "www/templates/view.html",
+      controller: 'ViewCtrl'
+    })
+
     .state('app.browse', {
       url: "/browse",
       views: {

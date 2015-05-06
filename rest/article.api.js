@@ -3,14 +3,7 @@ var getArticle = function(response){
 	var http = require('http');
 	// var weather  = require('weather-js');
 
-	var options = {
-	'hostname': 'api.reddit.com',
-	'port': 80,
-	'path': '/hot',
-	'method': 'GET',
-	'headers': {'user-agent': 'Mozilla/5.0'}
-	}
-
+	
 	var callBack = function(d){
 		var list = [];
 	    d.data.children.map(function(a){
@@ -32,24 +25,15 @@ var getArticle = function(response){
 			})
 		})
 	};
-
-	// httpGetApi(options, callBack);
-
-	// weather.find({search: 'Cebu', degreeType: 'F'}, function(err, result) {
-	//   if(err) console.log(err);
-	 
-	//   //console.log(JSON.stringify(result, null, 2));
-	//   JSON.stringify(result, null, 2)
-	// });
+	
 
 	var Firebase = require('firebase');
 	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
-	// myRootRef.set("main");
-	//myRootRef.push({title: Math.random().toString(36).substring(7) , url:"test",num: 20})
+
 	var list = [];
 	var displayChatMessage = function(message){		
 		for (x in message){			
-			list.push({'title':message[x].title})
+			list.push({'title':message[x].title,'id':x})
 		}
 		response.send(list)
 	}
@@ -63,10 +47,10 @@ var getArticle = function(response){
 
 }
 
-var viewArticle = function(response, title){
+var viewArticle = function(response, id){
 	var Firebase = require('firebase');
 	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
-	myRootRef.orderByChild("title").equalTo(title).on("value", function(snapshot) {
+	myRootRef.orderByKey().equalTo(id).on("value", function(snapshot) {
 		var result = snapshot.val()
 
 		for (x in result){
