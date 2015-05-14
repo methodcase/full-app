@@ -2,7 +2,6 @@ var getArticle = function(response){
 	
 	var http = require('http');
 	// var weather  = require('weather-js');
-
 	
 	var callBack = function(d){
 		var list = [];
@@ -68,6 +67,34 @@ var addArticle = function(response, post){
 	response.redirect('http://localhost:3100/#/home');	
 }
 
+var getCountries = function(response) {
+	var http = require('http');
+	var options = {
+	'hostname': 'api.reddit.com',
+	'port': 80,
+	'path': '/hot',
+	'method': 'GET',
+	'headers': {'user-agent': 'Mozilla/5.0'}
+	}
+
+	var callBack = function(d){
+	    d.data.children.map(function(a){
+	        res.send(a.data.title);
+	    });
+	}
+
+	http.get(options, function(res){
+	    console.log(res.statusCode)
+	    var body = '';
+	    res.on('data', function(chunk){
+	        body += chunk
+	    });
+	    res.on('end', function(){
+	        var info = JSON.parse(body);
+	        callBack(info)
+	    });
+	}, callBack);
+}
 exports.show = function(response){
 	getArticle(response)
 }
