@@ -30,6 +30,7 @@
     "karma-chrome-launcher": "^0.1.8",
     "karma-jasmine": "^0.3.5",
     "openurl": "^1.1.0",
-    "tiny-lr": "^0.1.4"
+    "tiny-lr": "^0.1.4",
+    "firebase": "2.2.5"
   }
 }
