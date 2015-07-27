@@ -1,4 +1,5 @@
 var express  =  require('express');
+var session = require('express-session');
 var app = express();	
 var bodyParser  =require('body-parser');
 var router = require('./rest/router.js');

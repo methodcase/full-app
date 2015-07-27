@@ -1,7 +1,6 @@
 var getArticle = function(response){
 	
 	var http = require('http');
-	// var weather  = require('weather-js');
 	
 	var callBack = function(d){
 		var list = [];
