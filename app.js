@@ -4,7 +4,7 @@ var app = express();
 var bodyParser  =require('body-parser');
 var router = require('./rest/router.js');
 
-app.use(require('connect-livereload')());
+app.use(session({secret: 'mysecret'}));
 app.use(express.static(__dirname));
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies

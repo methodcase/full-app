@@ -32,6 +32,14 @@ function useStatesConfig($stateProvider) {
       }
     })
 
+    .state('app.login', {
+          url: "/login",
+          views: {
+              "head": {templateUrl: "www/templates/header.html", controller: "HomeCtrl"},
+              "body": {templateUrl: "www/templates/login.html", controller: 'ViewCtrl'}
+          }
+        })
+
 
 }
 
