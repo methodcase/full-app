@@ -24,7 +24,6 @@ var getArticle = function(response){
 		})
 	};
 	
-
 	var Firebase = require('firebase');
 	var myRootRef = new Firebase('https://rentie.firebaseio.com/article');
 
@@ -54,8 +53,7 @@ var viewArticle = function(response, id){
 		for (x in result){
 			response.send(result[x])
 		}
-	});
-	
+	});	
 }
 
 var addArticle = function(response, post){
@@ -75,13 +73,13 @@ var getCountries = function(response) {
 	'method': 'GET',
 	'headers': {'user-agent': 'Mozilla/5.0'}
 	}
-
+	
 	var callBack = function(d){
 	    d.data.children.map(function(a){
 	        res.send(a.data.title);
 	    });
 	}
-
+	
 	http.get(options, function(res){
 	    console.log(res.statusCode)
 	    var body = '';
@@ -94,6 +92,7 @@ var getCountries = function(response) {
 	    });
 	}, callBack);
 }
+
 exports.show = function(response){
 	getArticle(response)
 }
