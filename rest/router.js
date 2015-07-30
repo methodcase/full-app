@@ -24,8 +24,8 @@ module.exports = function(app){
 	});
 	
 	app.post('/rest/login',function(req,res){
-		sess=req.session;		
-		sess.username=req.body.username;
+		sess = req.session;		
+		sess.username = req.body.username;
 		console.log(sess.username);
 		// res.end('done');
 		res.redirect("/securepage");
@@ -34,7 +34,7 @@ module.exports = function(app){
 	app.get('/securepage',function(req,res){
 		sess=req.session;
 		if (sess.username == "testing")
-			res.send('ok');
+			res.send("ok");
 		else
 			res.send('invalid');
 	});

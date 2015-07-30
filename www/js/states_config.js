@@ -4,10 +4,10 @@ function useStatesConfig($stateProvider) {
 
     .state('app',{
       url:"/app",
-      bastract: true,
+      abstract: true,
       templateUrl: "www/templates/parent.html",
     })
-
+    
     .state('app.home', {
       url: "/home",
       views: {
